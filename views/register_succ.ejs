@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <span id="time">3</span>秒后跳往首页
+<script>
+    delayURL();    
+    function delayURL() { 
+        var delay = document.getElementById("time").innerHTML;
+        var t = setTimeout("delayURL()", 3000);
+        if (delay > 0) {
+            delay--;
+            document.getElementById("time").innerHTML = delay;
+        } else {
+            clearTimeout(t); 
+            window.location.href = "/";
+        }        
+    } 
+</script>
+</body>
+</html>
